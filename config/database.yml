@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  port: 5434
+  username: postgres
+  password: postgres
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: demo_solidus_store_development
+
+test:
+  <<: *default
+  database: demo_solidus_store_test
+
+production:
+  <<: *default
+  database: demo_solidus_store_production
+  username: demo_solidus_store
+  password: <%= ENV["DEMO_SOLIDUS_STORE_DATABASE_PASSWORD"] %>
