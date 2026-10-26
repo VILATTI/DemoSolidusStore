@@ -56,6 +56,8 @@ curl -s -H "Authorization: Bearer <KEY>" "http://localhost:3020/api/products?cur
 
 Product image URLs are signed ActiveStorage links and expire after a few minutes.
 
+`host.docker.internal` is allowed in development so a Dockerised client can reach the store.
+
 ## Stripe
 
 Payments go through `solidus_stripe` in test mode. Create the payment method once
