@@ -37,6 +37,24 @@ Override the port with `make run PORT=4000`.
 
 Admin login: `admin@example.com` / `test1234`.
 
+## Stripe
+
+Payments go through `solidus_stripe` in test mode. Create the payment method once
+in Admin → Settings → Payments → New: provider `SolidusStripe::PaymentMethod`,
+API key `sk_test_…`, publishable key `pk_test_…`, webhook secret empty.
+
+Test card: `4242 4242 4242 4242`, any future date, any CVC.
+Solidus authorizes at checkout and captures when the shipment is shipped in admin.
+
+## Known fixes
+
+- `StoreController#cart_link` calls `fresh_when` before `render`; the starter
+  frontend's original order raises `DoubleRenderError` on Rails 8.1.
+- `app/assets/config/manifest.js` links `app/javascript` and `vendor/javascript`
+  so `solidus_stripe`'s importmap assets pass the sprockets precompile check.
+- `bin/rails tailwindcss:build` once after setup; the watcher alone can serve a
+  half-written CSS file on the first requests.
+
 ## Notes
 
 - `app/assets/config/manifest.js` exists only because Solidus admin still needs sprockets on Rails 8.

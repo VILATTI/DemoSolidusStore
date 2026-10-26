@@ -580,6 +580,10 @@ GEM
       solidus_webhooks (~> 0.2)
     solidus_sample (4.7.2)
       solidus_core (= 4.7.2)
+    solidus_stripe (5.0.2)
+      solidus_core (>= 3.2, < 5)
+      solidus_support (~> 0.8)
+      stripe (~> 8.0)
     solidus_support (0.15.0)
       flickwerk (~> 0.3.4)
       solidus_core (~> 4.1)
@@ -612,6 +616,7 @@ GEM
     stimulus-rails (1.3.4)
       railties (>= 6.0.0)
     stringio (3.2.0)
+    stripe (8.7.1)
     tailwindcss-rails (3.3.2)
       railties (>= 7.0.0)
       tailwindcss-ruby (~> 3.0)
@@ -705,6 +710,7 @@ DEPENDENCIES
   solidus_admin (>= 0.2)
   solidus_auth_devise (~> 2.6)
   solidus_paypal_commerce_platform (~> 1.0)
+  solidus_stripe (~> 5.0)
   solidus_support (>= 0.12.0)
   stimulus-rails
   tailwindcss-rails (~> 3.0)
@@ -906,6 +912,7 @@ CHECKSUMS
   solidus_legacy_promotions (4.7.2) sha256=a2c386811d0b6328c09b6604450d8895c27e2b1e0be585b80717cdd70b54f5bd
   solidus_paypal_commerce_platform (1.0.3) sha256=e2cc15d8534e27cad8947fc112c4cf91cbffa7b4e3f6781e743fcaf5cfd1dee5
   solidus_sample (4.7.2) sha256=109bca4c396dd3c46dccd178f1368d4810663a8a6408ee823baca11862c0b9fb
+  solidus_stripe (5.0.2) sha256=b78fa745d4b492631894a9d8cf28d69834891f3783e5ce7e8e8357653f4ca5f3
   solidus_support (0.15.0) sha256=0464a8f815204c8d08b680323d3fca9b5459f764eaabd344b5fe7dc08cb22cd8
   solidus_webhooks (0.4.2) sha256=d5d2db8c9178484187dc8a1154130584497e946669fed36c06d24f927d616739
   sprockets (4.4.1) sha256=fbd665edad0916de5c7abefef0fc616866a60c5e48ce2846f39ac3fc5df9e184
@@ -916,6 +923,7 @@ CHECKSUMS
   state_machines-activerecord (0.9.0) sha256=06a9731aabbfd456d594bd55832d4d1b3c0054fc7530bbe8eb771213a819182a
   stimulus-rails (1.3.4) sha256=765676ffa1f33af64ce026d26b48e8ffb2e0b94e0f50e9119e11d6107d67cb06
   stringio (3.2.0) sha256=c37cb2e58b4ffbd33fe5cd948c05934af997b36e0b6ca6fdf43afa234cf222e1
+  stripe (8.7.1) sha256=9f90dc0018ff7630381e935337639c7018ab50795da02d8592fadfbb74d21c90
   tailwindcss-rails (3.3.2) sha256=e879317e55eb7cf39e3f4db306a8ef8d54962de8a2be656aea3d96b4163d6f0b
   tailwindcss-ruby (3.4.19-aarch64-linux) sha256=8abdd5c9afa14b1ee337e37223170165becaa1ad7c4968457d3fc48cddd4e7c6
   tailwindcss-ruby (3.4.19-arm-linux) sha256=94b0764763d80dc5a8fa52c21ea2e57b2fac9a578293886173e7776f55dab22a
