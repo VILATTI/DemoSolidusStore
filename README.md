@@ -48,16 +48,8 @@ Solidus authorizes at checkout and captures when the shipment is shipped in admi
 
 ## Known fixes
 
-- `StoreController#cart_link` calls `fresh_when` before `render`; the starter
-  frontend's original order raises `DoubleRenderError` on Rails 8.1.
-- `app/assets/config/manifest.js` links `app/javascript` and `vendor/javascript`
-  so `solidus_stripe`'s importmap assets pass the sprockets precompile check.
-- `bin/rails tailwindcss:build` once after setup; the watcher alone can serve a
-  half-written CSS file on the first requests.
-
-## Notes
-
+- `StoreController#cart_link` calls `fresh_when` before `render`; the starter frontend's original order raises `DoubleRenderError` on Rails 8.1.
+- `app/assets/config/manifest.js` links `app/javascript` and `vendor/javascript` so `solidus_stripe`'s importmap assets pass the sprockets precompile check.
+- `bin/rails tailwindcss:build` once after setup; the watcher alone can serve a half-written CSS file on the first requests.
 - `app/assets/config/manifest.js` exists only because Solidus admin still needs sprockets on Rails 8.
-- Product images go through ImageMagick (`variant_processor = :mini_magick`),
-  since Solidus describes image sizes in ImageMagick geometry. `saver` is added to
-  Rails' allowed image-processing methods for the same reason.
+- Product images go through ImageMagick (`variant_processor = :mini_magick`), since Solidus describes image sizes in ImageMagick geometry. `saver` is added to Rails' allowed image-processing methods for the same reason.
